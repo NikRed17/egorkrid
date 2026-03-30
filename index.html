@@ -5,56 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Прикол на 1 Апреля!</title>
     <style>
-        /* Убираем отступы по умолчанию */
         body { 
             margin: 0; 
             padding: 0; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            justify-content: flex-start; /* Размещаем контент сверху вниз */
+            justify-content: flex-start; 
             min-height: 100vh; 
             background-color: #f0f0f0; 
             font-family: sans-serif;
             text-align: center;
         }
 
-        /* Настройки для увеличения фото */
         img { 
-            max-width: 95%; /* Фото занимает почти всю ширину экрана */
+            max-width: 95%; 
             height: auto; 
             border-radius: 15px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            margin-top: 20px; /* Отступ сверху */
-            margin-bottom: 20px; /* Отступ до текста */
+            margin-top: 20px; 
+            margin-bottom: 20px; 
         }
 
-        /* Стиль для новой надписи */
         .instruction-text {
             font-size: 20px;
             color: #333;
-            margin-bottom: 15px; /* Отступ до аудио */
+            margin-bottom: 15px; 
             font-weight: bold;
         }
 
-        /* Настройки для аудио, чтобы оно не сплющивалось */
         audio {
-            width: 90%; /* Аудио почти во всю ширину */
-            max-width: 400px; /* Но не шире 400px (для больших экранов) */
-            margin-bottom: 30px; /* Отступ снизу страницы */
+            width: 90%; 
+            max-width: 400px; 
+            margin-bottom: 30px; 
         }
     </style>
 </head>
-<body>
+<body onclick="playAudio()"> <img src="image.jpeg" alt="С 1 Апреля!">
 
-    <img src="image.jpeg" alt="С 1 Апреля!">
-
-    <div class="instruction-text">Включи аудио</div>
-
-    <audio controls>
+    <audio id="myAudio" controls autoplay>
         <source src="music.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает элемент audio.
     </audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
 
 </body>
 </html>
